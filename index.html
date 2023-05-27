@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <meta charset="UTF8">
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+        <script type="text/javascript" src="pew.js"></script>
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+        <style>
+            body {
+                background-color: #000011;
+            }
+
+            #container {
+                display: flex;
+                width: 100vw; 
+                height: 100vh;
+                margin: auto;
+            }
+            #central {
+                margin: auto;
+            }
+            .info {
+                color: #468cff;
+                text-align: center;
+                max-width: 440px;
+                padding-top: 20px;
+            }
+            .info p {
+                padding-bottom: 20px;
+            }
+            .info a {
+                text-decoration: underline;
+            }
+            .info h1 {
+                padding-bottom: 20px;
+                font-size: 2em;
+                color: white;
+            }
+            #pewpew-parent {
+                background-color: black;
+                padding: 20px;
+                width: 440px;
+                height: 440px;
+                margin: auto;
+            }
+            #pewpew {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                overflow: hidden;
+            }
+            .cell {
+                width: 44px;
+                height: 44px;
+                margin: 3px;
+                background-color: #000022;
+            }
+        </style>
+        <py-env>
+        - paths:
+            - ./code.py
+            - ./pew.py
+        </py-env>
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="central">
+                <div class="info">
+                    <h1>Dance Dance <b>REZ</b>olution</b></h1>
+                    <p>Game made by <a href="https://itch.io/profile/mellyn" target="_blank">Mellyn</a> for <a href="https://itch.io/jam/lowrezjam-2022" target="_blank">LOWREZJAM 2022</a>.
+                    <br/>Press the correct key when it passes the line: ⬅️⬇️⬆️➡️</p>
+                </div>
+                <div id="pewpew-parent">
+                    <div id="pewpew">
+                    </div>
+                </div>
+                <div class="info">
+                    <p>Also playable on the <a href="https://www.makerfabs.com/pewpew-standalone.html" target="_blank">PewPew</a>
+                        portable hand-held game console
+                        <a href="https://pewpew.readthedocs.io/en/latest/">programmed with Python</a>.</p>
+                </div>
+            </div>
+        </div>
+        <py-script> 
+            import pew
+            import code 
+            pew.Element = code.Element = Element
+            pyscript_loader.close()
+            pyscript.run_until_complete(code.main())
+        </py-script>
+    </body>
+</html>
