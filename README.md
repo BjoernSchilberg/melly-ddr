@@ -8,6 +8,7 @@ pixels!
 
 This is my attempt to run the game in an actual PyScript environment in 2023.
 
+You can try it here: <https://bjoernschilberg.github.io/melly-ddr/>
 
 ![game](game.gif)
 
