@@ -55,11 +55,13 @@
                 background-color: #000022;
             }
         </style>
-        <py-env>
-        - paths:
-            - ./code.py
-            - ./pew.py
-        </py-env>
+        <py-config>
+        [splashscreen]
+        autoclose = true
+        [[fetch]]
+        files = ["./pew.py", "./code.py"]
+        </py-config>
+
     </head>
 
     <body>
@@ -85,7 +87,6 @@
             import pew
             import code 
             pew.Element = code.Element = Element
-            pyscript_loader.close()
             pyscript.run_until_complete(code.main())
         </py-script>
     </body>

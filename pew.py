@@ -1,5 +1,5 @@
 import asyncio
-import js 
+from js import Element, window
 
 
 _BLUES = (
@@ -68,7 +68,7 @@ def init():
         for y in range(8)
         for x in range(8)
     )
-    Element("pewpew").write(cells)
+    Element("pewpew").element.innerHTML=cells
 
 
 def brightness(level):
@@ -97,14 +97,14 @@ def show(pix):
 
 
 async def keys():
-    input = js.window.input
+    input = window.input
 
     result = 0x00
     for key, mask in _KEYMAP.items():
         if input.isDown(key):
             result |= mask
     input.reset()
-    
+
     return result
 
 
